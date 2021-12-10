@@ -1,0 +1,800 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+
+        .grop_hos:hover {
+            box-shadow: rgb(0 0 0 / 6%) 0px 4px 8px;
+            padding: 2%;
+            border-radius: 16px;
+            /* background-color: rgba(240, 240, 240, 0.664); */
+
+        }
+
+        .row li {
+            width: 33%;
+            float: left;
+            padding: 3%;
+        }
+
+        .name:hover {
+            color: 0FB396;
+        }
+
+        button:hover {
+            background-color: 0FB396 !important;
+            color: #fff !important;
+            border-radius: 16px !important;
+        }
+        .cate {
+            background-color: 0FB396 !important;
+            color: #fff !important;
+            border-radius: 16px !important;
+        }
+
+        .badge.health {
+            font-size: .83em;
+            color: #012524;
+            background-color: #c2f5e9;
+            margin-right: 2%;
+        }
+
+        .badge.dental {
+            font-size: .83em;
+            color: #04283f;
+            background-color: #d0f0fd;
+            margin-right: 2%;
+        }
+
+        .badge.beauty {
+            font-size: .83em;
+            color: #400832;
+            background-color: #ffdaf6;
+            margin-right: 2%;
+        }
+
+        .badge.pet {
+            font-size: .83em;
+            color: #3b2501;
+            background-color: #ffeab6;
+            margin-right: 2%;
+        }
+
+        .badge.other {
+            font-size: .83em;
+            color: #102046;
+            background-color: #cfdfff;
+            margin-right: 2%;
+        }
+
+        span {
+            color: #a5a5a5;
+        }
+
+        .show-content {
+            display: block;
+        }
+
+        .hide-content {
+            display: none;
+        }
+
+        .see-all:hover {
+            color: #0FB396 !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+
+        @media only screen and (max-width: 450px) {
+            h4 {
+                font-size: medium !important;
+            }
+            body{
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+            span{
+                font-size: small !important;
+            }
+            .badge{
+                font-size: 0.7em !important;
+            }
+            .row{
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+            button{
+                padding: 3% !important;
+                width: 100% !important;
+                margin: 0% !important;
+                margin-bottom: 7% !important;
+                font-size: small !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 396px) {
+            h4 {
+                font-size: small !important;
+            }
+            body{
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+            span{
+                font-size: small !important;
+            }
+            .badge{
+                font-size: 0.7em !important;
+            }
+            .row{
+                margin-left: 1%;
+                margin-right: 1%;
+
+                padding-left: 0% !important;
+                padding-right: 0% !important;
+            }
+            .card-body {
+                padding: 2% !important;
+            }
+        }
+
+        @media only screen and (max-width: 765px) {
+            .card {
+                margin: 2% !important;
+            }
+            /* .card-body {
+                padding: 10% !important;
+            } */
+            
+            body{
+                margin-left: 8%;
+                margin-right: 8%;
+            }
+            
+            button{
+                padding: 3% !important;
+                width: 100% !important;
+                margin: 0% !important;
+                margin-bottom: 7% !important;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- content -->
+    <div class="">
+        <!-- title -->
+        <div class="card-body">
+            <h2 class="card-title" style="color: 0FB396;">รวมรีวิว<h2>
+        </div>
+        <!-- button -->
+        <div class="row ">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                <div class="text-center col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                    <a href="partner.html" style="text-decoration: none;">
+                        <button type="button" class="btn btn-light rounded btn-md  hos"
+                            style="margin: 5%;  border-radius: 16px; width: 30%; height: auto !important; border-radius: 16px !important; padding: 1.5%;">รีวิวตามสถานบริการ</button>
+                    </a>
+                    <a href="category.html" style="text-decoration: none;">
+                        <button type="button" class="btn btn-light rounded btn-md cate"
+                            style=" border-radius: 16px;  width: 30%; height: auto !important; border-radius: 16px !important; padding: 1.5%;">รีวิวตามหมวดหมู่</button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- hospital -->
+    <div class="">
+        <div class="card-body">
+            <h4 class="card-title">รีวิวโปรแกรมสุขภาพ<h4>
+                    <hr>
+                    <a id="elementClicked1"
+                        style="display:block; cursor: pointer;  text-align: right; color: black; text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
+                        href="#elementYouWantToShow1"><span class="see-all"
+                            style="scroll-behavior: smooth;">ดูทั้งหมด</span> </a>
+        </div>
+    </div>
+    <div id="hospital">
+        <!-- js will add here -->
+        <div class="show-content" id="example_content1">
+        </div>
+        <div class="hide-content" id="elementYouWantToShow1">
+        </div>
+    </div>
+
+
+    <!-- dental -->
+    <div class="">
+        <div class="card-body">
+            <h4 class="card-title">รีวิวโปรแกรมทำฟัน<h4>
+                    <hr>
+                    <a id="elementClicked2"
+                        style="display:block; cursor: pointer;  text-align: right; color: black; text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
+                        href="#elementYouWantToShow2"><span class="see-all"
+                            style="scroll-behavior: smooth;">ดูทั้งหมด</span> </a>
+        </div>
+    </div>
+    <div id="dental">
+        <!-- js will add here -->
+        <div class="show-content" id="example_content2">
+        </div>
+        <div class="hide-content" id="elementYouWantToShow2">
+        </div>
+    </div>
+
+    <!-- beauty -->
+    <div class="">
+        <div class="card-body">
+            <h4 class="card-title">รีวิวโปรแกรมความงาม<h4>
+                    <hr>
+                    <a id="elementClicked3"
+                        style="display:block; cursor: pointer;  text-align: right; color: black; text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
+                        href="#elementYouWantToShow3"><span class="see-all"
+                            style="scroll-behavior: smooth;">ดูทั้งหมด</span> </a>
+        </div>
+    </div>
+    <div id="beauty">
+        <!-- js will add here -->
+        <div class="show-content" id="example_content3">
+        </div>
+        <div class="hide-content" id="elementYouWantToShow3">
+        </div>
+    </div>
+
+    <!-- pet -->
+    <div class="">
+        <div class="card-body">
+            <h4 class="card-title">รีวิวบริการเพื่อสัตว์เลี้ยง<h4>
+                    <hr>
+                    <a id="elementClicked4"
+                        style="display:none; cursor: pointer;  text-align: right; color: black; text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
+                        href="#elementYouWantToShow4"><span class="see-all"
+                            style="scroll-behavior: smooth;">ดูทั้งหมด</span> </a>
+        </div>
+    </div>
+    <div id="pet">
+        <!-- js will add here -->
+        <div class="show-content" id="example_content4">
+        </div>
+        <div class="hide-content" id="elementYouWantToShow4">
+        </div>
+    </div>
+
+    <!-- other -->
+    <div class="">
+        <div class="card-body">
+            <h4 class="card-title">รีวิวสินค้าหรือผลิตภัณฑ์สุขภาพ<h4>
+                    <hr>
+                    <a id="elementClicked5"
+                        style="display:none; cursor: pointer;  text-align: right; color: black; text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
+                        href="#elementYouWantToShow5"><span class="see-all"
+                            style="scroll-behavior: smooth;">ดูทั้งหมด</span> </a>
+        </div>
+    </div>
+    <div id="other">
+        <!-- js will add here -->
+        <div class="show-content" id="example_content5">
+        </div>
+        <div class="hide-content" id="elementYouWantToShow5">
+        </div>
+    </div>
+
+
+
+    <!-- data -->
+    <script>
+        let requestURL = "category.json";
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+                dataReportStatus(JSON.parse(request.responseText));
+                console.log("yay!!");
+            }
+        };
+        request.open("GET", requestURL, true);
+        request.send();
+
+        // fetch data
+        function dataReportStatus(data) {
+            let count_1 = 0;
+            let count_2 = 0;
+            let count_3 = 0;
+            let count_4 = 0;
+            let count_5 = 0;
+
+            for (let i = 0; i < data.length; i++) {
+
+                if (data[i].cat_lv1 == 'Health') {
+                    count_1 += 1;
+                    //link cover
+                    var a_cover = document.createElement("a");
+                    a_cover.href = data[i].Review_URL;
+                    a_cover.setAttribute("style", "text-decoration: none; color:black;");
+
+                    //div cover
+                    var div_card = document.createElement("div");
+                    div_card.setAttribute("class", "card m-5 border-0  ");
+                    div_card.setAttribute("style", "");
+
+                    //row
+                    var div_row = document.createElement("div");
+                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+
+                    //col1
+                    var div_col = document.createElement("div");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-4 col-md-4 col-4");
+
+                    // add col1 in row
+                    div_row.appendChild(div_col);
+
+                    //img logo
+                    var i_image = document.createElement("img");
+                    i_image.src = data[i].logo;
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm');
+                    i_image.setAttribute("style", ' width: 120px;');
+                    // i_image.setAttribute("src", `${data[i].image}`);
+
+
+                    // add img in col1
+                    div_col.appendChild(i_image);
+
+                    //col2 des
+                    var div_col2 = document.createElement("div");
+                    div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
+
+
+
+                    // card text
+                    var div_text = document.createElement("div");
+                    div_text.setAttribute("class", "card-body");
+                    div_col2.appendChild(div_text);
+
+
+                    // name
+                    var h3_tag = document.createElement("h4");
+                    h3_tag.setAttribute("class", "card-title name");
+                    h3_tag.innerHTML = `${data[i].Title}`;
+                    console.log("yaye!!");
+
+                    // add name in card text
+                    div_text.appendChild(h3_tag);
+
+
+                    // badges
+                    var badge = document.createElement("span");
+                    badge.setAttribute("class", "badge badge-pill health");
+                    badge.innerHTML = `${data[i].cat_lv1}`;
+
+                    var count_review = document.createElement("span");
+                    count_review.setAttribute("class", "");
+                    count_review.innerHTML = `${data[i].count_review}` + ' บทความรีวิว';
+
+                    // add badges in card txt
+                    div_text.appendChild(badge);
+                    div_text.appendChild(count_review);
+                    // add col2 in row
+                    div_row.appendChild(div_col2);
+                    // add row in div cover
+                    div_card.appendChild(div_row);
+
+                    // add div cover in link cover
+                    a_cover.appendChild(div_card);
+
+
+                    if (count_1 < 6) {
+                        var parent = document.getElementById("example_content1");
+                        parent.appendChild(a_cover);
+                    }
+                    else {
+                        var parent = document.getElementById("elementYouWantToShow1");
+                        parent.appendChild(a_cover);
+                    }
+                }
+
+                if (data[i].cat_lv1 == 'Dental') {
+                    count_2 += 1;
+                    //link cover
+                    var a_cover = document.createElement("a");
+                    a_cover.href = data[i].Review_URL;
+                    a_cover.setAttribute("style", "text-decoration: none; color:black;");
+
+                    //div cover
+                    var div_card = document.createElement("div");
+                    div_card.setAttribute("class", "card m-5 border-0  ");
+                    div_card.setAttribute("style", "");
+
+                    //row
+                    var div_row = document.createElement("div");
+                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+
+                    //col1
+                    var div_col = document.createElement("div");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-4 col-md-4 col-4");
+
+                    // add col1 in row
+                    div_row.appendChild(div_col);
+
+                    //img logo
+                    var i_image = document.createElement("img");
+                    i_image.src = data[i].logo;
+                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm');
+                    i_image.setAttribute("style", ' width: 120px;');
+                    // i_image.setAttribute("src", `${data[i].image}`);
+
+
+                    // add img in col1
+                    div_col.appendChild(i_image);
+
+                    //col2 des
+                    var div_col2 = document.createElement("div");
+                    div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
+
+
+
+                    // card text
+                    var div_text = document.createElement("div");
+                    div_text.setAttribute("class", "card-body");
+                    div_col2.appendChild(div_text);
+
+
+                    // name
+                    var h3_tag = document.createElement("h4");
+                    h3_tag.setAttribute("class", "card-title name");
+                    h3_tag.innerHTML = `${data[i].Title}`;
+                    console.log("yaye!!");
+
+                    // add name in card text
+                    div_text.appendChild(h3_tag);
+
+
+                    // badges
+                    var badge = document.createElement("span");
+                    badge.setAttribute("class", "badge badge-pill dental");
+                    badge.innerHTML = `${data[i].cat_lv1}`;
+
+                    var count_review = document.createElement("span");
+                    count_review.setAttribute("class", "");
+                    count_review.innerHTML = `${data[i].count_review}` + ' บทความรีวิว';
+
+                    // add badges in card txt
+                    div_text.appendChild(badge);
+                    div_text.appendChild(count_review);
+                    // add col2 in row
+                    div_row.appendChild(div_col2);
+                    // add row in div cover
+                    div_card.appendChild(div_row);
+
+                    // add div cover in link cover
+                    a_cover.appendChild(div_card);
+
+                    if (count_2 < 6) {
+                        var parent = document.getElementById("example_content2");
+                        parent.appendChild(a_cover);
+                    }
+                    else {
+                        var parent = document.getElementById("elementYouWantToShow2");
+                        parent.appendChild(a_cover);
+                    }
+                }
+
+                if (data[i].cat_lv1 == 'Beauty') {
+                    count_3 += 1;
+                    //link cover
+                    var a_cover = document.createElement("a");
+                    a_cover.href = data[i].Review_URL;
+                    a_cover.setAttribute("style", "text-decoration: none; color:black;");
+
+                    //div cover
+                    var div_card = document.createElement("div");
+                    div_card.setAttribute("class", "card m-5 border-0  ");
+                    div_card.setAttribute("style", "");
+
+                    //row
+                    var div_row = document.createElement("div");
+                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+
+                    //col1
+                    var div_col = document.createElement("div");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-4 col-md-4 col-4");
+
+                    // add col1 in row
+                    div_row.appendChild(div_col);
+
+                    //img logo
+                    var i_image = document.createElement("img");
+                    i_image.src = data[i].logo;
+                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm');
+                    i_image.setAttribute("style", ' width: 120px;');
+                    // i_image.setAttribute("src", `${data[i].image}`);
+
+
+                    // add img in col1
+                    div_col.appendChild(i_image);
+
+                    //col2 des
+                    var div_col2 = document.createElement("div");
+                    div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
+
+
+
+                    // card text
+                    var div_text = document.createElement("div");
+                    div_text.setAttribute("class", "card-body");
+                    div_col2.appendChild(div_text);
+
+
+                    // name
+                    var h3_tag = document.createElement("h4");
+                    h3_tag.setAttribute("class", "card-title name");
+                    h3_tag.innerHTML = `${data[i].Title}`;
+                    console.log("yaye!!");
+
+                    // add name in card text
+                    div_text.appendChild(h3_tag);
+
+
+                    // badges
+                    var badge = document.createElement("span");
+                    badge.setAttribute("class", "badge badge-pill beauty");
+                    badge.innerHTML = `${data[i].cat_lv1}`;
+
+                    var count_review = document.createElement("span");
+                    count_review.setAttribute("class", "");
+                    count_review.innerHTML = `${data[i].count_review}` + ' บทความรีวิว';
+
+                    // add badges in card txt
+                    div_text.appendChild(badge);
+                    div_text.appendChild(count_review);
+                    // add col2 in row
+                    div_row.appendChild(div_col2);
+                    // add row in div cover
+                    div_card.appendChild(div_row);
+
+                    // add div cover in link cover
+                    a_cover.appendChild(div_card);
+
+                    if (count_3 < 6) {
+                        var parent = document.getElementById("example_content3");
+                        parent.appendChild(a_cover);
+                    }
+                    else {
+                        var parent = document.getElementById("elementYouWantToShow3");
+                        parent.appendChild(a_cover);
+                    }
+                }
+
+                if (data[i].cat_lv1 == 'Pet') {
+                    count_4 += 1;
+                    //link cover
+                    var a_cover = document.createElement("a");
+                    a_cover.href = data[i].Review_URL;
+                    a_cover.setAttribute("style", "text-decoration: none; color:black;");
+
+                    //div cover
+                    var div_card = document.createElement("div");
+                    div_card.setAttribute("class", "card m-5 border-0  ");
+                    div_card.setAttribute("style", "");
+
+                    //row
+                    var div_row = document.createElement("div");
+                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+
+                    //col1
+                    var div_col = document.createElement("div");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-4 col-md-4 col-4");
+
+                    // add col1 in row
+                    div_row.appendChild(div_col);
+
+                    //img logo
+                    var i_image = document.createElement("img");
+                    i_image.src = data[i].logo;
+                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm');
+                    i_image.setAttribute("style", ' width: 120px;');
+                    // i_image.setAttribute("src", `${data[i].image}`);
+
+
+                    // add img in col1
+                    div_col.appendChild(i_image);
+
+                    //col2 des
+                    var div_col2 = document.createElement("div");
+                    div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
+
+
+
+                    // card text
+                    var div_text = document.createElement("div");
+                    div_text.setAttribute("class", "card-body");
+                    div_col2.appendChild(div_text);
+
+
+                    // name
+                    var h3_tag = document.createElement("h4");
+                    h3_tag.setAttribute("class", "card-title name");
+                    h3_tag.innerHTML = `${data[i].Title}`;
+                    console.log("yaye!!");
+
+                    // add name in card text
+                    div_text.appendChild(h3_tag);
+
+
+                    // badges
+                    var badge = document.createElement("span");
+                    badge.setAttribute("class", "badge badge-pill pet");
+                    badge.innerHTML = `${data[i].cat_lv1}`;
+
+                    var count_review = document.createElement("span");
+                    count_review.setAttribute("class", "");
+                    count_review.innerHTML = `${data[i].count_review}` + ' บทความรีวิว';
+
+                    // add badges in card txt
+                    div_text.appendChild(badge);
+                    div_text.appendChild(count_review);
+                    // add col2 in row
+                    div_row.appendChild(div_col2);
+                    // add row in div cover
+                    div_card.appendChild(div_row);
+
+                    // add div cover in link cover
+                    a_cover.appendChild(div_card);
+
+                    if (count_4 < 6) {
+                        var parent = document.getElementById("example_content4");
+                        parent.appendChild(a_cover);
+                    }
+                    else {
+                        var parent = document.getElementById("elementYouWantToShow4");
+                        parent.appendChild(a_cover);
+                    }
+                }
+
+                if (data[i].cat_lv1 == 'Health Products') {
+                    count_5 += 1;
+                    //link cover
+                    var a_cover = document.createElement("a");
+                    a_cover.href = data[i].Review_URL;
+                    a_cover.setAttribute("style", "text-decoration: none; color:black;");
+
+                    //div cover
+                    var div_card = document.createElement("div");
+                    div_card.setAttribute("class", "card m-5 border-0  ");
+                    div_card.setAttribute("style", "");
+
+                    //row
+                    var div_row = document.createElement("div");
+                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+
+                    //col1
+                    var div_col = document.createElement("div");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-4 col-md-4 col-4");
+
+                    // add col1 in row
+                    div_row.appendChild(div_col);
+
+                    //img logo
+                    var i_image = document.createElement("img");
+                    i_image.src = data[i].logo;
+                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm');
+                    i_image.setAttribute("style", ' width: 120px;');
+                    // i_image.setAttribute("src", `${data[i].image}`);
+
+
+                    // add img in col1
+                    div_col.appendChild(i_image);
+
+                    //col2 des
+                    var div_col2 = document.createElement("div");
+                    div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
+
+
+
+                    // card text
+                    var div_text = document.createElement("div");
+                    div_text.setAttribute("class", "card-body");
+                    div_col2.appendChild(div_text);
+
+
+                    // name
+                    var h3_tag = document.createElement("h4");
+                    h3_tag.setAttribute("class", "card-title name");
+                    h3_tag.innerHTML = `${data[i].Title}`;
+                    console.log("yaye!!");
+
+                    // add name in card text
+                    div_text.appendChild(h3_tag);
+
+
+                    // badges
+                    var badge = document.createElement("span");
+                    badge.setAttribute("class", "badge badge-pill other");
+                    badge.innerHTML = `${data[i].cat_lv1}`;
+
+                    var count_review = document.createElement("span");
+                    count_review.setAttribute("class", "");
+                    count_review.innerHTML = `${data[i].count_review}` + ' บทความรีวิว';
+
+                    // add badges in card txt
+                    div_text.appendChild(badge);
+                    div_text.appendChild(count_review);
+                    // add col2 in row
+                    div_row.appendChild(div_col2);
+                    // add row in div cover
+                    div_card.appendChild(div_row);
+
+                    // add div cover in link cover
+                    a_cover.appendChild(div_card);
+
+                    if (count_5 < 6) {
+                        var parent = document.getElementById("example_content5");
+                        parent.appendChild(a_cover);
+                    }
+                    else {
+                        var parent = document.getElementById("elementYouWantToShow5");
+                        parent.appendChild(a_cover);
+                    }
+                }
+
+            }
+            const elementClicked1 = document.querySelector("#elementClicked1");
+            const elementYouWantToShow1 = document.querySelector("#elementYouWantToShow1");
+
+            elementClicked1.addEventListener("click", () => {
+                elementYouWantToShow1.classList.toggle("hide-content");
+            });
+
+
+            const elementClicked2 = document.querySelector("#elementClicked2");
+            const elementYouWantToShow2 = document.querySelector("#elementYouWantToShow2");
+
+            elementClicked2.addEventListener("click", () => {
+                elementYouWantToShow2.classList.toggle("hide-content");
+            });
+
+            const elementClicked3 = document.querySelector("#elementClicked3");
+            const elementYouWantToShow3 = document.querySelector("#elementYouWantToShow3");
+
+            elementClicked3.addEventListener("click", () => {
+                elementYouWantToShow3.classList.toggle("hide-content");
+            });
+
+            const elementClicked4 = document.querySelector("#elementClicked4");
+            const elementYouWantToShow4 = document.querySelector("#elementYouWantToShow4");
+
+            elementClicked4.addEventListener("click", () => {
+                elementYouWantToShow4.classList.toggle("hide-content");
+            });
+
+            const elementClicked5 = document.querySelector("#elementClicked5");
+            const elementYouWantToShow5 = document.querySelector("#elementYouWantToShow5");
+
+            elementClicked5.addEventListener("click", () => {
+                elementYouWantToShow5.classList.toggle("hide-content");
+            });
+        }
+
+    </script>
+</body>
+
+</html>
