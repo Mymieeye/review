@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
+    <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
     <style>
         body {
-            margin-left: 15%;
-            margin-right: 15%;
+            margin-left: 10%;
+            margin-right: 10%;
         }
 
-        .grop_hos:hover {
+        .card:hover {
             box-shadow: rgb(0 0 0 / 6%) 0px 4px 8px;
-            padding: 2%;
+            /* padding: 2%; */
             border-radius: 16px;
             /* background-color: rgba(240, 240, 240, 0.664); */
 
@@ -37,8 +38,9 @@
             color: #fff !important;
             border-radius: 16px !important;
         }
+
         .cate {
-            background-color: 0FB396 !important;
+            background-color: #0FB396 !important;
             color: #fff !important;
             border-radius: 16px !important;
         }
@@ -90,43 +92,100 @@
             display: none;
         }
 
-        .see-all:hover {
-            color: #0FB396 !important;
-        }
+        /* .see-all:hover {
+            background-color: #0fb395ad !important;
+        } */
 
         html {
             scroll-behavior: smooth;
         }
-        .card-body{
+
+        .card-body {
             padding: 1% !important;
         }
+
 
 
         @media only screen and (max-width: 450px) {
             h4 {
                 font-size: medium !important;
             }
-            body{
+
+            body {
                 /* margin-left: 1% !important;
                 margin-right: 1% !important; */
             }
-            span{
+
+            span {
                 font-size: small !important;
             }
-            .badge{
+
+            .badge {
                 font-size: 0.7em !important;
             }
-            .row{
+
+            .row {
                 margin-left: 1%;
                 margin-right: 1%;
             }
-            button{
+
+            button {
                 padding: 3% !important;
                 width: 100% !important;
                 margin: 0% !important;
                 margin-bottom: 7% !important;
                 font-size: small !important;
             }
+
+
+            .reccomend {
+                display: none;
+            }
+
+            /* .show2 {
+                display: none;
+            } */
+
+            .card_img_show {
+                gap: 10px;
+                height: 95px;
+                overflow-x: scroll;
+                flex-flow: wrap;
+                display: flex;
+                flex-direction: column;
+                width: 50vw;
+                position: relative;
+                left: 0;
+                padding-left: 0px;
+                margin: 0;
+
+            }
+
+            .menu-icon-section {
+                overflow-x: scroll;
+                flex-flow: wrap;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                height: 100px;
+                width: 95%;
+                align-items: center;
+                margin-right: 30%;
+                /* width: 100%;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-column-gap: 10px;
+                padding: 0 10px; */
+
+            }
+            .wrapper{
+                margin-left: 6%;
+            }
+            .img_bt {
+                max-width: 70px !important;
+                padding-right: 10px;
+
+            }
+
 
         }
 
@@ -134,63 +193,219 @@
             h4 {
                 font-size: small !important;
             }
-            body{
+
+            body {
                 margin-left: 6% !important;
                 margin-right: 6% !important;
             }
-            span{
+
+            span {
                 font-size: small !important;
             }
-            .badge{
+
+            .badge {
                 font-size: 0.7em !important;
             }
-            .row{
+
+            .row {
                 margin-left: 1%;
                 margin-right: 1%;
 
                 padding-left: 0% !important;
                 padding-right: 0% !important;
             }
+
             .card-body {
-                    /* padding: 2% !important; */
-                padding-top: 5% !important;
+                padding: 2% !important;
+                /* padding-top: 5% !important; */
             }
-            h2{
+
+            h2 {
                 font-size: x-large;
             }
+
+            .logo {
+                width: 60px !important;
+            }
+
+            /* .img-show {
+                display: none;
+            } */
         }
 
         @media only screen and (max-width: 765px) {
             .card {
                 margin: 2% !important;
             }
+
             /* .card-body {
                 padding: 10% !important;
             } */
-            
-            body{
+
+            body {
                 margin-left: 8%;
                 margin-right: 8%;
             }
-            
-            button{
+
+            button {
                 padding: 3% !important;
                 width: 100% !important;
                 margin: 0% !important;
                 margin-bottom: 7% !important;
             }
+
+            .logo {
+                width: 65px !important;
+            }
+
+            /* .show2 {
+                display: none;
+            } */
+
+
+        }
+
+        .menu-icon-section {
+            display: flex;
+            justify-content: center;
+            /* display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-column-gap: 10px;
+            margin: 0 !important; */
+
+
         }
 
 
+        @media screen and (max-width: 900px) {
+            .menu-icon-section {
+                /* width: 100%;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-column-gap: 10px;
+                padding: 0 10 px; */
+            }
+
+            /* .img-show {
+                width: 90% !important;
+            } */
+            .card_img_show {
+                gap: 10px;
+                height: 125px;
+                overflow-x: scroll;
+                flex-flow: wrap;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                left: 0;
+                /* padding-left: 12px; */
+                margin: 0;
+
+            }
+            .logo {
+                width: 70px !important;
+            }
+
+        }
+
+        @media screen and (max-width: 375px) {
+            .menu-icon-section {
+                /* width: 100%;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-column-gap: 10px;
+                padding: 0 10px; */
+
+            }
+
+            .box {
+                justify-self: center;
+                align-self: center;
+
+            }
+
+            .logo {
+                width: 50px !important;
+            }
+
+            .card_img_show {
+                gap: 10px;
+                height: 95px;
+                overflow-x: scroll;
+                flex-flow: wrap;
+                display: flex;
+                flex-direction: column;
+                width: 50vw;
+                position: relative;
+                left: 0;
+                padding-left: 0px;
+                margin: 0;
+
+            }
+
+        }
+
+        .img_bt {
+            border: 0 none;
+            display: inline-block;
+            height: auto;
+            max-width: 60%;
+            justify-content: center;
+
+
+        }
+
+        .img_bt:hover {
+            transform: scale(1.1);
+            transition: .1s;
+            filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.137));
+        }
+
+        .img-show:hover {
+            transform: scale(1.1);
+            transition: .1s;
+            filter: drop-shadow(0.35rem 0.35rem 0.25rem rgba(0, 0, 0, 0.137));
+
+        }
+
+        .card_img_show {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+
+
+        }
+
+
+
+        @media screen and (max-width: 1144px) {
+
+            .card_img_show {
+                gap: 10px;
+                height: 125px;
+                overflow-x: scroll;
+                flex-flow: wrap;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                left: 0;
+                margin: 0;
+                justify-content: center;
+
+            }
+            .reccomend {
+                display: none;
+            }
+
+        }
     </style>
 </head>
 
 <body>
+
     <!-- content -->
     <div class="">
         <!-- title -->
         <div class="card-body">
-            <h2 class="card-title" style="color: 0FB396;">รวมรีวิว<h2>
+            <h2 class="card-title" style="color: 0FB396;" id="top-header">รวมรีวิว<h2>
         </div>
         <!-- button -->
         <div class="row ">
@@ -210,108 +425,166 @@
         </div>
     </div>
 
+    <!-- button -->
+
+    <div class="wrapper  justify-content-center">
+        <div class="menu-icon-section ">
+
+            <a href="#health" class="box text-center"><img src="img/health2.png"
+                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="health button" /></a>
+            <a href="#dental" class="box text-center"><img src="img/dental2.png"
+                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="dental button" /></a>
+            <a href="#beauty" class="box text-center"><img src="img/beauty2.png"
+                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="beauty button" /></a>
+
+            <a href="#pets" class="box text-center" style="align-self: center;"><img src="img/pet2.png"
+                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%; align-self: center;"
+                    alt="pet button" /></a>
+
+            <a href="#product" class="box text-center" style="align-self: center;"><img src="img/product2.png"
+                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%; align-self: center;"
+                    alt="product button" /></a>
+
+
+
+        </div>
+    </div>
+
+
+
 
     <!-- hospital -->
     <div class="">
         <div class="card-body">
-            <h4 class="card-title">รีวิวโปรแกรมสุขภาพ<h4>
+            <h4 class="card-title" id="health">รีวิวโปรแกรมสุขภาพ<h4>
                     <hr>
-                    <a id="elementClicked1"
-                        style="display:block; cursor: pointer;  text-align: right; color: black; text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                        href="#elementYouWantToShow1"><span class="see-all"
-                            style="scroll-behavior: smooth;">ดูทั้งหมด</span> </a>
+
+
         </div>
     </div>
     <div id="hospital">
         <!-- js will add here -->
         <div class="show-content" id="example_content1">
         </div>
-        <div class="hide-content" id="elementYouWantToShow1">
+        <br>
+        <div class="text-center">
+            <a id="elementClicked1"
+                style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
+                href="category_health.html#health" target="_blank">
+                <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
+                    style=" border-radius: 16px; width: 30% !important; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
+            </a>
         </div>
+
+        <br>
     </div>
 
 
     <!-- dental -->
     <div class="">
         <div class="card-body">
-            <h4 class="card-title">รีวิวโปรแกรมทำฟัน<h4>
+            <h4 class="card-title" id="dental">รีวิวโปรแกรมทำฟัน<h4>
                     <hr>
-                    <a id="elementClicked2"
-                        style="display:block; cursor: pointer;  text-align: right; color: black; text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                        href="#elementYouWantToShow2"><span class="see-all"
-                            style="scroll-behavior: smooth;">ดูทั้งหมด</span> </a>
+
         </div>
     </div>
     <div id="dental">
         <!-- js will add here -->
         <div class="show-content" id="example_content2">
         </div>
-        <div class="hide-content" id="elementYouWantToShow2">
+        <br>
+        <div class="text-center">
+            <a id="elementClicked2"
+                style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
+                href="category_dental.html#dental" target="_blank">
+                <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
+                    style=" border-radius: 16px; width: 30% !important; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
+            </a>
         </div>
+
+        <br>
     </div>
 
     <!-- beauty -->
     <div class="">
         <div class="card-body">
-            <h4 class="card-title">รีวิวโปรแกรมความงาม<h4>
+            <h4 class="card-title" id="beauty">รีวิวโปรแกรมความงาม<h4>
                     <hr>
-                    <a id="elementClicked3"
-                        style="display:block; cursor: pointer;  text-align: right; color: black; text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                        href="#elementYouWantToShow3"><span class="see-all"
-                            style="scroll-behavior: smooth;">ดูทั้งหมด</span> </a>
+
+
         </div>
     </div>
+
     <div id="beauty">
         <!-- js will add here -->
         <div class="show-content" id="example_content3">
         </div>
-        <div class="hide-content" id="elementYouWantToShow3">
+        <br>
+        <div class="text-center">
+            <a id="elementClicked3"
+                style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
+                href="category_beauty.html#beauty" target="_blank">
+                <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
+                    style=" border-radius: 16px; width: 30% !important; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
+            </a>
         </div>
+
+        <br>
     </div>
 
     <!-- pet -->
     <div class="">
         <div class="card-body">
-            <h4 class="card-title">รีวิวบริการเพื่อสัตว์เลี้ยง<h4>
+            <h4 class="card-title" id="pets">รีวิวบริการเพื่อสัตว์เลี้ยง<h4>
                     <hr>
-                    <a id="elementClicked4"
-                        style="display:none; cursor: pointer;  text-align: right; color: black; text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                        href="#elementYouWantToShow4"><span class="see-all"
-                            style="scroll-behavior: smooth;">ดูทั้งหมด</span> </a>
+
         </div>
     </div>
     <div id="pet">
         <!-- js will add here -->
         <div class="show-content" id="example_content4">
         </div>
-        <div class="hide-content" id="elementYouWantToShow4">
+        <!-- <div class="text-center">
+            <a id="elementClicked4"
+                style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
+                href="health.html#health" >
+                <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
+                    style=" border-radius: 16px; width: 30%; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
+            </a>
         </div>
+        <br>
+        <br> -->
     </div>
 
     <!-- other -->
     <div class="">
         <div class="card-body">
-            <h4 class="card-title">รีวิวสินค้าหรือผลิตภัณฑ์สุขภาพ<h4>
+            <h4 class="card-title" id="product">รีวิวสินค้าหรือผลิตภัณฑ์สุขภาพ<h4>
                     <hr>
-                    <a id="elementClicked5"
-                        style="display:none; cursor: pointer;  text-align: right; color: black; text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                        href="#elementYouWantToShow5"><span class="see-all"
-                            style="scroll-behavior: smooth;">ดูทั้งหมด</span> </a>
+
         </div>
     </div>
     <div id="other">
         <!-- js will add here -->
         <div class="show-content" id="example_content5">
         </div>
-        <div class="hide-content" id="elementYouWantToShow5">
+        <!-- <div class="text-center">
+            <a id="elementClicked5"
+                style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
+                href="health.html#health" >
+                <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
+                    style=" border-radius: 16px; width: 30%; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
+            </a>
         </div>
+        <br>
+        <br> -->
     </div>
 
 
 
     <!-- data -->
     <script>
-        let requestURL = "https://raw.githubusercontent.com/Mymieeye/review/main/category.json";
+        let requestURL = "category.json";
         let request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState == 4 && request.status == 200) {
@@ -321,6 +594,13 @@
         };
         request.open("GET", requestURL, true);
         request.send();
+
+        // wait til loaded data
+        var jumpID = url.split("#")[1];
+        $.get("content.json", function (data) {
+            document.getElementById(jumpID).scrollIntoView();
+        });
+
 
         // fetch data
         function dataReportStatus(data) {
@@ -346,11 +626,11 @@
 
                     //row
                     var div_row = document.createElement("div");
-                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+                    div_row.setAttribute("class", "row g-0 grop_hos ml-2");
 
                     //col1
                     var div_col = document.createElement("div");
-                    div_col.setAttribute("class", "col-lg-2 col-sm-4 col-md-3 col-4");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // add col1 in row
                     div_row.appendChild(div_col);
@@ -358,15 +638,15 @@
                     //img logo
                     var i_image = document.createElement("img");
                     i_image.src = data[i].logo;
-                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm');
-                    i_image.setAttribute("style", ' width: 120px;');
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm logo');
+                    i_image.setAttribute("style", ' width: 100px;');
                     // i_image.setAttribute("src", `${data[i].image}`);
 
 
                     // add img in col1
                     div_col.appendChild(i_image);
 
-                    //col2 des
+                    //col2 
                     var div_col2 = document.createElement("div");
                     div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
 
@@ -395,8 +675,68 @@
 
                     var count_review = document.createElement("span");
                     count_review.setAttribute("class", "");
-                    count_review.innerHTML = `${data[i].count_review}` + ' บทความรีวิว';
+                    count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
+                    //row2
+                    var div_row2 = document.createElement("div");
+                    div_row2.setAttribute("class", "row g-0 grop_hos ");
+                    //col1 of row2
+                    var div_col3 = document.createElement("div");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
+                    //col of row2
+                    var div_col4 = document.createElement("div");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
+                    // div img show
+                    var div_img_show = document.createElement("div");
+                    div_img_show.setAttribute("class", "card_img_show m-3");
+                    div_col2.appendChild(div_img_show);
+
+                    // a cover img 1
+                    var a_img2 = document.createElement("a");
+                    a_img2.href = data[i].link1;
+                    a_img2.setAttribute("style", "text-decoration: none; color:black;");
+                    a_img2.target = "_blank";
+
+
+                    //img review
+                    var i_image2 = document.createElement("img");
+                    i_image2.src = data[i].img1;
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm  mt-2 mr-4');
+                    i_image2.setAttribute("style", ' width: 200px; align-self: center;');
+
+                    a_img2.appendChild(i_image2)
+
+                    div_img_show.appendChild(a_img2);
+
+                    //img review
+                    if (data[i].img2 != "") {
+                        // a cover img 2
+                        var a_img3 = document.createElement("a");
+                        a_img3.href = data[i].link2;
+                        a_img3.setAttribute("style", "text-decoration: none; color:black;");
+                        a_img3.target = "_blank";
+
+                        var i_image3 = document.createElement("img");
+                        i_image3.src = data[i].img2;
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm  mt-2 mr-4');
+                        i_image3.setAttribute("style", ' width: 200px; align-self: center;');
+                        a_img3.appendChild(i_image3)
+                        // add img in col1
+                        div_img_show.appendChild(a_img3);
+                    }
+
+
+                    var recomm = document.createElement("span");
+                    recomm.setAttribute("class", "reccomend");
+                    recomm.innerHTML = 'ดูเพิ่มเติม';
+                    recomm.setAttribute("style", 'align-self: center;');
+
+                    // add img in col1
+                    div_img_show.appendChild(recomm);
+
+                    // add col1 in row
+                    div_row2.appendChild(div_col3);
+                    div_row2.appendChild(div_col4);
                     // add badges in card txt
                     div_text.appendChild(badge);
                     div_text.appendChild(count_review);
@@ -404,6 +744,7 @@
                     div_row.appendChild(div_col2);
                     // add row in div cover
                     div_card.appendChild(div_row);
+                    div_card.appendChild(div_row2);
 
                     // add div cover in link cover
                     a_cover.appendChild(div_card);
@@ -413,10 +754,7 @@
                         var parent = document.getElementById("example_content1");
                         parent.appendChild(a_cover);
                     }
-                    else {
-                        var parent = document.getElementById("elementYouWantToShow1");
-                        parent.appendChild(a_cover);
-                    }
+
                 }
 
                 if (data[i].cat_lv1 == 'Dental') {
@@ -433,11 +771,11 @@
 
                     //row
                     var div_row = document.createElement("div");
-                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+                    div_row.setAttribute("class", "row g-0 grop_hos ml-2");
 
                     //col1
                     var div_col = document.createElement("div");
-                    div_col.setAttribute("class", "col-lg-2 col-sm-4 col-md-3 col-4");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // add col1 in row
                     div_row.appendChild(div_col);
@@ -445,15 +783,15 @@
                     //img logo
                     var i_image = document.createElement("img");
                     i_image.src = data[i].logo;
-                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm');
-                    i_image.setAttribute("style", ' width: 120px;');
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm logo');
+                    i_image.setAttribute("style", ' width: 100px;');
                     // i_image.setAttribute("src", `${data[i].image}`);
 
 
                     // add img in col1
                     div_col.appendChild(i_image);
 
-                    //col2 des
+                    //col2 
                     var div_col2 = document.createElement("div");
                     div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
 
@@ -482,8 +820,68 @@
 
                     var count_review = document.createElement("span");
                     count_review.setAttribute("class", "");
-                    count_review.innerHTML = `${data[i].count_review}` + ' บทความรีวิว';
+                    count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
+                    //row2
+                    var div_row2 = document.createElement("div");
+                    div_row2.setAttribute("class", "row g-0 grop_hos ");
+                    //col1 of row2
+                    var div_col3 = document.createElement("div");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
+                    //col of row2
+                    var div_col4 = document.createElement("div");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
+                    // div img show
+                    var div_img_show = document.createElement("div");
+                    div_img_show.setAttribute("class", "card_img_show m-3");
+                    div_col2.appendChild(div_img_show);
+
+                    // a cover img 1
+                    var a_img2 = document.createElement("a");
+                    a_img2.href = data[i].link1;
+                    a_img2.setAttribute("style", "text-decoration: none; color:black;");
+                    a_img2.target = "_blank";
+
+
+                    //img review
+                    var i_image2 = document.createElement("img");
+                    i_image2.src = data[i].img1;
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm  mt-2 mr-4');
+                    i_image2.setAttribute("style", ' width: 200px; align-self: center;');
+
+                    a_img2.appendChild(i_image2)
+
+                    div_img_show.appendChild(a_img2);
+
+                    //img review
+                    if (data[i].img2 != "") {
+                        // a cover img 2
+                        var a_img3 = document.createElement("a");
+                        a_img3.href = data[i].link2;
+                        a_img3.setAttribute("style", "text-decoration: none; color:black;");
+                        a_img3.target = "_blank";
+
+                        var i_image3 = document.createElement("img");
+                        i_image3.src = data[i].img2;
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm  mt-2 mr-4');
+                        i_image3.setAttribute("style", ' width: 200px; align-self: center;');
+                        a_img3.appendChild(i_image3)
+                        // add img in col1
+                        div_img_show.appendChild(a_img3);
+                    }
+
+
+                    var recomm = document.createElement("span");
+                    recomm.setAttribute("class", "reccomend");
+                    recomm.innerHTML = 'ดูเพิ่มเติม';
+                    recomm.setAttribute("style", 'align-self: center;');
+
+                    // add img in col1
+                    div_img_show.appendChild(recomm);
+
+                    // add col1 in row
+                    div_row2.appendChild(div_col3);
+                    div_row2.appendChild(div_col4);
                     // add badges in card txt
                     div_text.appendChild(badge);
                     div_text.appendChild(count_review);
@@ -491,6 +889,7 @@
                     div_row.appendChild(div_col2);
                     // add row in div cover
                     div_card.appendChild(div_row);
+                    div_card.appendChild(div_row2);
 
                     // add div cover in link cover
                     a_cover.appendChild(div_card);
@@ -499,10 +898,7 @@
                         var parent = document.getElementById("example_content2");
                         parent.appendChild(a_cover);
                     }
-                    else {
-                        var parent = document.getElementById("elementYouWantToShow2");
-                        parent.appendChild(a_cover);
-                    }
+
                 }
 
                 if (data[i].cat_lv1 == 'Beauty') {
@@ -519,11 +915,11 @@
 
                     //row
                     var div_row = document.createElement("div");
-                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+                    div_row.setAttribute("class", "row g-0 grop_hos ml-2");
 
                     //col1
                     var div_col = document.createElement("div");
-                    div_col.setAttribute("class", "col-lg-2 col-sm-4 col-md-3 col-4");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // add col1 in row
                     div_row.appendChild(div_col);
@@ -531,15 +927,15 @@
                     //img logo
                     var i_image = document.createElement("img");
                     i_image.src = data[i].logo;
-                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm');
-                    i_image.setAttribute("style", ' width: 120px;');
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm logo');
+                    i_image.setAttribute("style", ' width: 100px;');
                     // i_image.setAttribute("src", `${data[i].image}`);
 
 
                     // add img in col1
                     div_col.appendChild(i_image);
 
-                    //col2 des
+                    //col2 
                     var div_col2 = document.createElement("div");
                     div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
 
@@ -568,8 +964,68 @@
 
                     var count_review = document.createElement("span");
                     count_review.setAttribute("class", "");
-                    count_review.innerHTML = `${data[i].count_review}` + ' บทความรีวิว';
+                    count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
+                    //row2
+                    var div_row2 = document.createElement("div");
+                    div_row2.setAttribute("class", "row g-0 grop_hos ");
+                    //col1 of row2
+                    var div_col3 = document.createElement("div");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
+                    //col of row2
+                    var div_col4 = document.createElement("div");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
+                    // div img show
+                    var div_img_show = document.createElement("div");
+                    div_img_show.setAttribute("class", "card_img_show m-3");
+                    div_col2.appendChild(div_img_show);
+
+                    // a cover img 1
+                    var a_img2 = document.createElement("a");
+                    a_img2.href = data[i].link1;
+                    a_img2.setAttribute("style", "text-decoration: none; color:black;");
+                    a_img2.target = "_blank";
+
+
+                    //img review
+                    var i_image2 = document.createElement("img");
+                    i_image2.src = data[i].img1;
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm  mt-2 mr-4');
+                    i_image2.setAttribute("style", ' width: 200px; align-self: center;');
+
+                    a_img2.appendChild(i_image2)
+
+                    div_img_show.appendChild(a_img2);
+
+                    //img review
+                    if (data[i].img2 != "") {
+                        // a cover img 2
+                        var a_img3 = document.createElement("a");
+                        a_img3.href = data[i].link2;
+                        a_img3.setAttribute("style", "text-decoration: none; color:black;");
+                        a_img3.target = "_blank";
+
+                        var i_image3 = document.createElement("img");
+                        i_image3.src = data[i].img2;
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm  mt-2 mr-4');
+                        i_image3.setAttribute("style", ' width: 200px; align-self: center;');
+                        a_img3.appendChild(i_image3)
+                        // add img in col1
+                        div_img_show.appendChild(a_img3);
+                    }
+
+
+                    var recomm = document.createElement("span");
+                    recomm.setAttribute("class", "reccomend");
+                    recomm.innerHTML = 'ดูเพิ่มเติม';
+                    recomm.setAttribute("style", 'align-self: center;');
+
+                    // add img in col1
+                    div_img_show.appendChild(recomm);
+
+                    // add col1 in row
+                    div_row2.appendChild(div_col3);
+                    div_row2.appendChild(div_col4);
                     // add badges in card txt
                     div_text.appendChild(badge);
                     div_text.appendChild(count_review);
@@ -577,18 +1033,17 @@
                     div_row.appendChild(div_col2);
                     // add row in div cover
                     div_card.appendChild(div_row);
+                    div_card.appendChild(div_row2);
 
                     // add div cover in link cover
                     a_cover.appendChild(div_card);
+
 
                     if (count_3 < 6) {
                         var parent = document.getElementById("example_content3");
                         parent.appendChild(a_cover);
                     }
-                    else {
-                        var parent = document.getElementById("elementYouWantToShow3");
-                        parent.appendChild(a_cover);
-                    }
+
                 }
 
                 if (data[i].cat_lv1 == 'Pet') {
@@ -605,11 +1060,11 @@
 
                     //row
                     var div_row = document.createElement("div");
-                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+                    div_row.setAttribute("class", "row g-0 grop_hos ml-2");
 
                     //col1
                     var div_col = document.createElement("div");
-                    div_col.setAttribute("class", "col-lg-2 col-sm-4 col-md-3 col-4");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // add col1 in row
                     div_row.appendChild(div_col);
@@ -617,15 +1072,15 @@
                     //img logo
                     var i_image = document.createElement("img");
                     i_image.src = data[i].logo;
-                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm');
-                    i_image.setAttribute("style", ' width: 120px;');
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm logo');
+                    i_image.setAttribute("style", ' width: 100px;');
                     // i_image.setAttribute("src", `${data[i].image}`);
 
 
                     // add img in col1
                     div_col.appendChild(i_image);
 
-                    //col2 des
+                    //col2 
                     var div_col2 = document.createElement("div");
                     div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
 
@@ -654,8 +1109,68 @@
 
                     var count_review = document.createElement("span");
                     count_review.setAttribute("class", "");
-                    count_review.innerHTML = `${data[i].count_review}` + ' บทความรีวิว';
+                    count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
+                    //row2
+                    var div_row2 = document.createElement("div");
+                    div_row2.setAttribute("class", "row g-0 grop_hos ");
+                    //col1 of row2
+                    var div_col3 = document.createElement("div");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
+                    //col of row2
+                    var div_col4 = document.createElement("div");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
+                    // div img show
+                    var div_img_show = document.createElement("div");
+                    div_img_show.setAttribute("class", "card_img_show m-3");
+                    div_col2.appendChild(div_img_show);
+
+                    // a cover img 1
+                    var a_img2 = document.createElement("a");
+                    a_img2.href = data[i].link1;
+                    a_img2.setAttribute("style", "text-decoration: none; color:black;");
+                    a_img2.target = "_blank";
+
+
+                    //img review
+                    var i_image2 = document.createElement("img");
+                    i_image2.src = data[i].img1;
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm  mt-2 mr-4');
+                    i_image2.setAttribute("style", ' width: 200px; align-self: center;');
+
+                    a_img2.appendChild(i_image2)
+
+                    div_img_show.appendChild(a_img2);
+
+                    //img review
+                    if (data[i].img2 != "") {
+                        // a cover img 2
+                        var a_img3 = document.createElement("a");
+                        a_img3.href = data[i].link2;
+                        a_img3.setAttribute("style", "text-decoration: none; color:black;");
+                        a_img3.target = "_blank";
+
+                        var i_image3 = document.createElement("img");
+                        i_image3.src = data[i].img2;
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm  mt-2 mr-4');
+                        i_image3.setAttribute("style", ' width: 200px; align-self: center;');
+                        a_img3.appendChild(i_image3)
+                        // add img in col1
+                        div_img_show.appendChild(a_img3);
+                    }
+
+
+                    var recomm = document.createElement("span");
+                    recomm.setAttribute("class", "reccomend");
+                    recomm.innerHTML = 'ดูเพิ่มเติม';
+                    recomm.setAttribute("style", 'align-self: center;');
+
+                    // add img in col1
+                    div_img_show.appendChild(recomm);
+
+                    // add col1 in row
+                    div_row2.appendChild(div_col3);
+                    div_row2.appendChild(div_col4);
                     // add badges in card txt
                     div_text.appendChild(badge);
                     div_text.appendChild(count_review);
@@ -663,18 +1178,17 @@
                     div_row.appendChild(div_col2);
                     // add row in div cover
                     div_card.appendChild(div_row);
+                    div_card.appendChild(div_row2);
 
                     // add div cover in link cover
                     a_cover.appendChild(div_card);
+
 
                     if (count_4 < 6) {
                         var parent = document.getElementById("example_content4");
                         parent.appendChild(a_cover);
                     }
-                    else {
-                        var parent = document.getElementById("elementYouWantToShow4");
-                        parent.appendChild(a_cover);
-                    }
+
                 }
 
                 if (data[i].cat_lv1 == 'Health Products') {
@@ -691,11 +1205,11 @@
 
                     //row
                     var div_row = document.createElement("div");
-                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+                    div_row.setAttribute("class", "row g-0 grop_hos ml-2");
 
                     //col1
                     var div_col = document.createElement("div");
-                    div_col.setAttribute("class", "col-lg-2 col-sm-4 col-md-3 col-4");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // add col1 in row
                     div_row.appendChild(div_col);
@@ -703,15 +1217,15 @@
                     //img logo
                     var i_image = document.createElement("img");
                     i_image.src = data[i].logo;
-                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm');
-                    i_image.setAttribute("style", ' width: 120px;');
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm logo');
+                    i_image.setAttribute("style", ' width: 100px;');
                     // i_image.setAttribute("src", `${data[i].image}`);
 
 
                     // add img in col1
                     div_col.appendChild(i_image);
 
-                    //col2 des
+                    //col2 
                     var div_col2 = document.createElement("div");
                     div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
 
@@ -740,8 +1254,68 @@
 
                     var count_review = document.createElement("span");
                     count_review.setAttribute("class", "");
-                    count_review.innerHTML = `${data[i].count_review}` + ' บทความรีวิว';
+                    count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
+                    //row2
+                    var div_row2 = document.createElement("div");
+                    div_row2.setAttribute("class", "row g-0 grop_hos ");
+                    //col1 of row2
+                    var div_col3 = document.createElement("div");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
+                    //col of row2
+                    var div_col4 = document.createElement("div");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
+                    // div img show
+                    var div_img_show = document.createElement("div");
+                    div_img_show.setAttribute("class", "card_img_show m-3");
+                    div_col2.appendChild(div_img_show);
+
+                    // a cover img 1
+                    var a_img2 = document.createElement("a");
+                    a_img2.href = data[i].link1;
+                    a_img2.setAttribute("style", "text-decoration: none; color:black;");
+                    a_img2.target = "_blank";
+
+
+                    //img review
+                    var i_image2 = document.createElement("img");
+                    i_image2.src = data[i].img1;
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm  mt-2 mr-4');
+                    i_image2.setAttribute("style", ' width: 200px; align-self: center;');
+
+                    a_img2.appendChild(i_image2)
+
+                    div_img_show.appendChild(a_img2);
+
+                    //img review
+                    if (data[i].img2 != "") {
+                        // a cover img 2
+                        var a_img3 = document.createElement("a");
+                        a_img3.href = data[i].link2;
+                        a_img3.setAttribute("style", "text-decoration: none; color:black;");
+                        a_img3.target = "_blank";
+
+                        var i_image3 = document.createElement("img");
+                        i_image3.src = data[i].img2;
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm  mt-2 mr-4');
+                        i_image3.setAttribute("style", ' width: 200px; align-self: center;');
+                        a_img3.appendChild(i_image3)
+                        // add img in col1
+                        div_img_show.appendChild(a_img3);
+                    }
+
+
+                    var recomm = document.createElement("span");
+                    recomm.setAttribute("class", "reccomend");
+                    recomm.innerHTML = 'ดูเพิ่มเติม';
+                    recomm.setAttribute("style", 'align-self: center;');
+
+                    // add img in col1
+                    div_img_show.appendChild(recomm);
+
+                    // add col1 in row
+                    div_row2.appendChild(div_col3);
+                    div_row2.appendChild(div_col4);
                     // add badges in card txt
                     div_text.appendChild(badge);
                     div_text.appendChild(count_review);
@@ -749,57 +1323,24 @@
                     div_row.appendChild(div_col2);
                     // add row in div cover
                     div_card.appendChild(div_row);
+                    div_card.appendChild(div_row2);
 
                     // add div cover in link cover
                     a_cover.appendChild(div_card);
+
 
                     if (count_5 < 6) {
                         var parent = document.getElementById("example_content5");
                         parent.appendChild(a_cover);
                     }
-                    else {
-                        var parent = document.getElementById("elementYouWantToShow5");
-                        parent.appendChild(a_cover);
-                    }
+
                 }
 
+                
             }
-            const elementClicked1 = document.querySelector("#elementClicked1");
-            const elementYouWantToShow1 = document.querySelector("#elementYouWantToShow1");
-
-            elementClicked1.addEventListener("click", () => {
-                elementYouWantToShow1.classList.toggle("hide-content");
-            });
-
-
-            const elementClicked2 = document.querySelector("#elementClicked2");
-            const elementYouWantToShow2 = document.querySelector("#elementYouWantToShow2");
-
-            elementClicked2.addEventListener("click", () => {
-                elementYouWantToShow2.classList.toggle("hide-content");
-            });
-
-            const elementClicked3 = document.querySelector("#elementClicked3");
-            const elementYouWantToShow3 = document.querySelector("#elementYouWantToShow3");
-
-            elementClicked3.addEventListener("click", () => {
-                elementYouWantToShow3.classList.toggle("hide-content");
-            });
-
-            const elementClicked4 = document.querySelector("#elementClicked4");
-            const elementYouWantToShow4 = document.querySelector("#elementYouWantToShow4");
-
-            elementClicked4.addEventListener("click", () => {
-                elementYouWantToShow4.classList.toggle("hide-content");
-            });
-
-            const elementClicked5 = document.querySelector("#elementClicked5");
-            const elementYouWantToShow5 = document.querySelector("#elementYouWantToShow5");
-
-            elementClicked5.addEventListener("click", () => {
-                elementYouWantToShow5.classList.toggle("hide-content");
-            });
         }
+
+
 
     </script>
 </body>
