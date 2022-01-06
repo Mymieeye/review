@@ -10,10 +10,10 @@
     <title>Document</title>
     <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
     <style>
-        body {
+        /* body {
             margin-left: 10%;
             margin-right: 10%;
-        }
+        } */
 
         .card:hover {
             box-shadow: rgb(0 0 0 / 6%) 0px 4px 8px;
@@ -112,8 +112,8 @@
             }
 
             body {
-                /* margin-left: 1% !important;
-                margin-right: 1% !important; */
+                margin-left: 0% !important;
+                margin-right: 0 !important;
             }
 
             span {
@@ -168,7 +168,7 @@
                 flex-direction: column;
                 position: relative;
                 height: 100px;
-                width: 95%;
+                width: 100%;
                 align-items: center;
                 margin-right: 30%;
                 /* width: 100%;
@@ -177,15 +177,20 @@
                 padding: 0 10px; */
 
             }
-            .wrapper{
-                margin-left: 6%;
+
+            .wrapper {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
             }
+
             .img_bt {
                 max-width: 70px !important;
                 padding-right: 10px;
 
             }
-
+            .contents{
+                margin-left: 3%;
+            }
 
         }
 
@@ -195,8 +200,8 @@
             }
 
             body {
-                margin-left: 6% !important;
-                margin-right: 6% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
             }
 
             span {
@@ -217,7 +222,7 @@
 
             .card-body {
                 padding: 2% !important;
-                /* padding-top: 5% !important; */
+                padding-top: 5% !important;
             }
 
             h2 {
@@ -242,10 +247,10 @@
                 padding: 10% !important;
             } */
 
-            body {
+            /* body {
                 margin-left: 8%;
                 margin-right: 8%;
-            }
+            } */
 
             button {
                 padding: 3% !important;
@@ -268,10 +273,7 @@
         .menu-icon-section {
             display: flex;
             justify-content: center;
-            /* display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-column-gap: 10px;
-            margin: 0 !important; */
+
 
 
         }
@@ -279,6 +281,7 @@
 
         @media screen and (max-width: 900px) {
             .menu-icon-section {
+
                 /* width: 100%;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 grid-column-gap: 10px;
@@ -301,6 +304,7 @@
                 margin: 0;
 
             }
+
             .logo {
                 width: 70px !important;
             }
@@ -309,11 +313,24 @@
 
         @media screen and (max-width: 375px) {
             .menu-icon-section {
+                overflow-x: scroll;
+                flex-flow: wrap;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                height: 100px;
+                width: 100%;
+                align-items: center;
+                margin-right: 30%;
                 /* width: 100%;
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-column-gap: 10px;
                 padding: 0 10px; */
 
+            }
+
+            .wrapper {
+                margin-left: 6%;
             }
 
             .box {
@@ -338,6 +355,12 @@
                 left: 0;
                 padding-left: 0px;
                 margin: 0;
+
+            }
+
+            .img_bt {
+                max-width: 70px !important;
+                padding-right: 10px;
 
             }
 
@@ -391,10 +414,27 @@
                 justify-content: center;
 
             }
+
             .reccomend {
                 display: none;
             }
 
+        }
+
+        .content-top {
+            background-color: #ffffff;
+            padding-left: 5%;
+            padding-top: 2%;
+        }
+        .contents{
+                margin-left: 3%;
+            }
+        .see-all{
+            color: #ffffff;
+            background-color: #0FB396;
+        }
+        .see-all:hover{
+            background-color: #086655b4 !important;
         }
     </style>
 </head>
@@ -430,11 +470,11 @@
     <div class="wrapper  justify-content-center">
         <div class="menu-icon-section ">
 
-            <a href="#health" class="box text-center"><img src="img/health2.png"
+            <a href="category_health.html" class="box text-center"><img src="img/health2.png"
                     class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="health button" /></a>
-            <a href="#dental" class="box text-center"><img src="img/dental2.png"
+            <a href="category_dental.html" class="box text-center"><img src="img/dental2.png"
                     class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="dental button" /></a>
-            <a href="#beauty" class="box text-center"><img src="img/beauty2.png"
+            <a href="category_beauty.html" class="box text-center"><img src="img/beauty2.png"
                     class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="beauty button" /></a>
 
             <a href="#pets" class="box text-center" style="align-self: center;"><img src="img/pet2.png"
@@ -470,7 +510,7 @@
         <div class="text-center">
             <a id="elementClicked1"
                 style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                href="category_health.html#health" target="_blank">
+                href="category_health.html#health" >
                 <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
                     style=" border-radius: 16px; width: 30% !important; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
             </a>
@@ -496,7 +536,7 @@
         <div class="text-center">
             <a id="elementClicked2"
                 style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                href="category_dental.html#dental" target="_blank">
+                href="category_dental.html#dental" >
                 <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
                     style=" border-radius: 16px; width: 30% !important; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
             </a>
@@ -523,7 +563,7 @@
         <div class="text-center">
             <a id="elementClicked3"
                 style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                href="category_beauty.html#beauty" target="_blank">
+                href="category_beauty.html#beauty" >
                 <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
                     style=" border-radius: 16px; width: 30% !important; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
             </a>
@@ -564,6 +604,7 @@
 
         </div>
     </div>
+
     <div id="other">
         <!-- js will add here -->
         <div class="show-content" id="example_content5">
@@ -589,17 +630,17 @@
         request.onreadystatechange = function () {
             if (request.readyState == 4 && request.status == 200) {
                 dataReportStatus(JSON.parse(request.responseText));
-                console.log("yay!!");
+                console.log("get data successful!");
             }
         };
         request.open("GET", requestURL, true);
         request.send();
 
         // wait til loaded data
-        var jumpID = url.split("#")[1];
-        $.get("content.json", function (data) {
-            document.getElementById(jumpID).scrollIntoView();
-        });
+        // var jumpID = url.split("#")[1];
+        // $.get("content.json", function (data) {
+        //     document.getElementById(jumpID).scrollIntoView();
+        // });
 
 
         // fetch data
@@ -661,8 +702,8 @@
                     // name
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
-                    h3_tag.innerHTML = `${data[i].Title}`;
-                    console.log("yaye!!");
+                    h3_tag.innerHTML = `${data[i].Detail}`;
+                    
 
                     // add name in card text
                     div_text.appendChild(h3_tag);
@@ -806,8 +847,8 @@
                     // name
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
-                    h3_tag.innerHTML = `${data[i].Title}`;
-                    console.log("yaye!!");
+                    h3_tag.innerHTML = `${data[i].Detail}`;
+                   
 
                     // add name in card text
                     div_text.appendChild(h3_tag);
@@ -950,8 +991,8 @@
                     // name
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
-                    h3_tag.innerHTML = `${data[i].Title}`;
-                    console.log("yaye!!");
+                    h3_tag.innerHTML = `${data[i].Detail}`;
+                    
 
                     // add name in card text
                     div_text.appendChild(h3_tag);
@@ -1095,8 +1136,8 @@
                     // name
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
-                    h3_tag.innerHTML = `${data[i].Title}`;
-                    console.log("yaye!!");
+                    h3_tag.innerHTML = `${data[i].Detail}`;
+                    
 
                     // add name in card text
                     div_text.appendChild(h3_tag);
@@ -1240,8 +1281,8 @@
                     // name
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
-                    h3_tag.innerHTML = `${data[i].Title}`;
-                    console.log("yaye!!");
+                    h3_tag.innerHTML = `${data[i].Detail}`;
+                    
 
                     // add name in card text
                     div_text.appendChild(h3_tag);

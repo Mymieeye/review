@@ -10,10 +10,10 @@
     <title>Document</title>
     <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
     <style>
-        body {
+        /* body {
             margin-left: 10%;
             margin-right: 10%;
-        }
+        } */
 
         .card:hover {
             box-shadow: rgb(0 0 0 / 6%) 0px 4px 8px;
@@ -112,8 +112,8 @@
             }
 
             body {
-                /* margin-left: 1% !important;
-                margin-right: 1% !important; */
+                margin-left: 0% !important;
+                margin-right: 0 !important;
             }
 
             span {
@@ -160,6 +160,7 @@
                 margin: 0;
 
             }
+
             .menu-icon-section {
                 overflow-x: scroll;
                 flex-flow: wrap;
@@ -167,7 +168,7 @@
                 flex-direction: column;
                 position: relative;
                 height: 100px;
-                width: 95%;
+                width: 100%;
                 align-items: center;
                 margin-right: 30%;
                 /* width: 100%;
@@ -176,13 +177,19 @@
                 padding: 0 10px; */
 
             }
-            .wrapper{
-                margin-left: 6%;
+
+            .wrapper {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
             }
+
             .img_bt {
                 max-width: 70px !important;
                 padding-right: 10px;
 
+            }
+            .contents{
+                margin-left: 3%;
             }
 
         }
@@ -193,8 +200,8 @@
             }
 
             body {
-                margin-left: 6% !important;
-                margin-right: 6% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
             }
 
             span {
@@ -240,10 +247,10 @@
                 padding: 10% !important;
             } */
 
-            body {
+            /* body {
                 margin-left: 8%;
                 margin-right: 8%;
-            }
+            } */
 
             button {
                 padding: 3% !important;
@@ -312,7 +319,7 @@
                 flex-direction: column;
                 position: relative;
                 height: 100px;
-                width: 95%;
+                width: 100%;
                 align-items: center;
                 margin-right: 30%;
                 /* width: 100%;
@@ -321,7 +328,8 @@
                 padding: 0 10px; */
 
             }
-            .wrapper{
+
+            .wrapper {
                 margin-left: 6%;
             }
 
@@ -412,63 +420,82 @@
             }
 
         }
+
+        .content-top {
+            background-color: #ffffff;
+            padding-left: 5%;
+            padding-top: 2%;
+        }
+        .contents{
+                margin-left: 3%;
+            }
+        .see-all{
+            color: #ffffff;
+            background-color: #0FB396;
+        }
+        .see-all:hover{
+            background-color: #086655b4 !important;
+        }
     </style>
 </head>
 
 <body>
+    <!-- title -->
+    <div class="card-body">
+        <h2 class="card-title" style="color: 0FB396;" id="top-header">รวมรีวิว<h2>
+    </div>
+    <!-- button -->
+    <div class="row ">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+            <div class="text-center col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                <a href="index.html" style="text-decoration: none;">
+                    <button type="button" class="btn btn-light rounded btn-md  hos"
+                        style="margin: 5%;  border-radius: 16px; width: 30%; height: auto !important; border-radius: 16px !important; padding: 1.5%;">รีวิวตามสถานบริการ</button>
+                </a>
+                <a href="category.html" style="text-decoration: none;">
+                    <button type="button" class="btn btn-light rounded btn-md cate"
+                        style=" border-radius: 16px;  width: 30%; height: auto !important; border-radius: 16px !important; padding: 1.5%;">รีวิวตามหมวดหมู่</button>
+                </a>
+            </div>
 
-    <!-- content -->
-    <div class="">
-        <!-- title -->
-        <div class="card-body">
-            <h2 class="card-title" style="color: 0FB396;" id="top-header">รวมรีวิว<h2>
         </div>
-        <!-- button -->
-        <div class="row ">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
-                <div class="text-center col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
-                    <a href="index.html" style="text-decoration: none;">
-                        <button type="button" class="btn btn-light rounded btn-md  hos"
-                            style="margin: 5%;  border-radius: 16px; width: 30%; height: auto !important; border-radius: 16px !important; padding: 1.5%;">รีวิวตามสถานบริการ</button>
-                    </a>
-                    <a href="category.html" style="text-decoration: none;">
-                        <button type="button" class="btn btn-light rounded btn-md cate"
-                            style=" border-radius: 16px;  width: 30%; height: auto !important; border-radius: 16px !important; padding: 1.5%;">รีวิวตามหมวดหมู่</button>
-                    </a>
-                </div>
+    </div>
+    <!-- content -->
+    <div class="content-top">
+        <!-- sticky-top -->
+        
+        <!-- icon -->
+        <div class="wrapper  justify-content-center full-width-div">
+            <div class="menu-icon-section ">
+
+                <a href="health.html" class="box text-center" ><img src="img/health.png"
+                        class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;"
+                        alt="health button" /></a>
+                <a href="dental.html" class="box text-center" ><img src="img/dental.png"
+                        class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;"
+                        alt="dental button" /></a>
+                <a href="beauty.html" class="box text-center" ><img src="img/beauty.png"
+                        class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;"
+                        alt="beauty button" /></a>
+
+                <a href="#pets" class="box text-center"  style="align-self: center;"><img src="img/pet.png"
+                        class="img_bt img-responsive inline-block  " style="margin-bottom: 15%; align-self: center;"
+                        alt="pet button" /></a>
+
+                <a href="#product" class="box text-center"  style="align-self: center;"><img src="img/product.png"
+                        class="img_bt img-responsive inline-block  " style="margin-bottom: 15%; align-self: center;"
+                        alt="product button" /></a>
+
+
 
             </div>
         </div>
     </div>
 
-    <!-- button -->
-
-    <div class="wrapper  justify-content-center">
-        <div class="menu-icon-section ">
-
-            <a href="#health" class="box text-center"><img src="img/health.png"
-                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="health button" /></a>
-            <a href="#dental" class="box text-center"><img src="img/dental.png"
-                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="dental button" /></a>
-            <a href="#beauty" class="box text-center"><img src="img/beauty.png"
-                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="beauty button" /></a>
-
-            <a href="#pets" class="box text-center" style="align-self: center;"><img src="img/pet.png"
-                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%; align-self: center;"
-                    alt="pet button" /></a>
-
-            <a href="#product" class="box text-center" style="align-self: center;"><img src="img/product.png"
-                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%; align-self: center;"
-                    alt="product button" /></a>
 
 
-
-        </div>
-    </div>
-
-
-
-
+<div class="contents">
+    <br>
     <!-- hospital -->
     <div class="">
         <div class="card-body">
@@ -486,8 +513,8 @@
         <div class="text-center">
             <a id="elementClicked1"
                 style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                href="health.html#health" target="_blank">
-                <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
+                href="health.html#health" >
+                <button type="button" class="btn  rounded btn-md   text-center see-all"
                     style=" border-radius: 16px; width: 30% !important; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
             </a>
         </div>
@@ -512,8 +539,8 @@
         <div class="text-center">
             <a id="elementClicked2"
                 style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                href="dental.html#dental" target="_blank">
-                <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
+                href="dental.html#dental" >
+                <button type="button" class="btn  rounded btn-md   text-center see-all"
                     style=" border-radius: 16px; width: 30% !important; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
             </a>
         </div>
@@ -539,8 +566,8 @@
         <div class="text-center">
             <a id="elementClicked3"
                 style="  text-align: center;  text-decoration: none; font-size: medium; scroll-behavior: smooth !important; "
-                href="beauty.html#beauty" target="_blank">
-                <button type="button" class="btn btn-light rounded btn-md   text-center see-all"
+                href="beauty.html#beauty" >
+                <button type="button" class="btn  rounded btn-md   text-center see-all"
                     style=" border-radius: 16px; width: 30% !important; height: auto !important; border-radius: 16px !important; padding: 1.5%;">ดูทั้งหมด</button>
             </a>
         </div>
@@ -595,7 +622,7 @@
         <br>
         <br> -->
     </div>
-
+</div>
 
 
     <!-- data -->
@@ -605,17 +632,17 @@
         request.onreadystatechange = function () {
             if (request.readyState == 4 && request.status == 200) {
                 dataReportStatus(JSON.parse(request.responseText));
-                console.log("yay!!");
+                console.log("get data successful!");
             }
         };
         request.open("GET", requestURL, true);
         request.send();
 
         // wait til loaded data
-        var jumpID = url.split("#")[1];
-        $.get("content.json", function (data) {
-            document.getElementById(jumpID).scrollIntoView();
-        });
+        // var jumpID = url.split("#")[1];
+        // $.get("content.json", function (data) {
+        //     document.getElementById(jumpID).scrollIntoView();
+        // });
 
 
         // fetch data
@@ -678,7 +705,7 @@
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
                     h3_tag.innerHTML = `${data[i].Detail}`;
-                    console.log("yaye!!");
+                    
 
                     // add name in card text
                     div_text.appendChild(h3_tag);
@@ -823,7 +850,7 @@
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
                     h3_tag.innerHTML = `${data[i].Detail}`;
-                    console.log("yaye!!");
+                    
 
                     // add name in card text
                     div_text.appendChild(h3_tag);
@@ -968,7 +995,7 @@
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
                     h3_tag.innerHTML = `${data[i].Detail}`;
-                    console.log("yaye!!");
+                    
 
                     // add name in card text
                     div_text.appendChild(h3_tag);
@@ -1113,7 +1140,7 @@
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
                     h3_tag.innerHTML = `${data[i].Detail}`;
-                    console.log("yaye!!");
+                    
 
                     // add name in card text
                     div_text.appendChild(h3_tag);
@@ -1258,7 +1285,7 @@
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
                     h3_tag.innerHTML = `${data[i].Detail}`;
-                    console.log("yaye!!");
+                    
 
                     // add name in card text
                     div_text.appendChild(h3_tag);

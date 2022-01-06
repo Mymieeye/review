@@ -164,7 +164,7 @@
 
         @media only screen and (max-width: 396px) {
             h4 {
-                font-size: small !important;
+                font-size: medium !important;
             }
 
             body {
@@ -274,6 +274,7 @@
                 margin: 0;
 
             }
+
             .logo {
                 width: 70px !important;
             }
@@ -364,10 +365,29 @@
                 justify-content: center;
 
             }
+
             .reccomend {
                 display: none;
             }
 
+        }
+
+        .health-topics__nav-ul {
+            display: flex;
+
+            justify-content: start;
+        }
+
+        li {
+            padding: 1%;
+            list-style: none;
+        }
+
+        .topics {
+            color: #0FB396;
+        }
+        a{
+            text-decoration: none !important;
         }
     </style>
 </head>
@@ -431,10 +451,60 @@
         <div class="card-body">
             <h4 class="card-title" id="health">รีวิวสถานบริการด้านสุขภาพ (คลินิก/โรงพยาบาล)<h4>
                     <hr>
-
-
         </div>
     </div>
+
+   <!-- filter by alphabet -->
+  <div class="health-topics__nav-container " id="search">
+
+    <nav class="health-topics__nav">
+      <div class="topicslist__sectionheader">
+        <ul>
+          <li style="color: #a5a5a5;" class="search">ค้นหาตามตัวอักษร</li>
+        </ul>
+      </div>
+      <ul class="health-topics__nav-ul" id="nav-ul">
+        <!-- <li><a class="topics" href="#1">
+            <h4 >ก</h4>
+          </a></li>-->
+      </ul>
+    </nav>
+    <nav class="health-topics__nav">
+      <ul class="health-topics__nav-ul" id="nav-ul_eng">
+
+        <!-- <li><a class="topics" href="#D">
+            <h4>D</h4>
+          </a></li> -->
+
+
+      </ul>
+    </nav>
+
+  </div>
+
+
+    <div id="main">
+        <!-- ก -->
+        <!-- <section class="topicslist__section " style="margin-top: 2%;">
+      <div class="topicslist__colcontainer">
+        <div class="topicslist__sectionheader">
+          <ul>
+            <li id="1">
+              <h4>ก</h4>
+            </li>
+          </ul>
+        </div>
+        <div class="topicslist__topiccolumncont">
+          <ul>
+            <li><a href="#กายภาพบำบัดและนวดเพื่อการรักษา" class="topics">กายภาพบำบัดและนวดเพื่อการรักษา</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </section> -->
+    </div>
+
+
     <div id="hospital">
         <!-- js will add here -->
         <div class="show-content" id="example_content1">
@@ -455,15 +525,613 @@
         request.open("GET", requestURL, true);
         request.send();
 
-        // wait til loaded data
-        var jumpID = url.split("#")[1];
-        $.get("content.json", function (data) {
-            document.getElementById(jumpID).scrollIntoView();
-        });
+        let count_navbar = 0;
+
+        function loop_navbar_topics(uniqueChars) {
+            // show navbar ก in display
+            var nav_li = document.createElement("li");
+            var a_li = document.createElement("a");
+            a_li.href = "#" + count_navbar;
+            a_li.setAttribute("class", "topics");
+            var h4_li = document.createElement("h4");
+            h4_li.innerHTML = uniqueChars[0].charAt(9);
+
+            a_li.appendChild(h4_li);
+            nav_li.appendChild(a_li);
+            var parent_topics = document.getElementById("nav-ul");
+            parent_topics.appendChild(nav_li);
+
+            // show all toppic ก
+
+            var section = document.createElement("section");
+            section.setAttribute("class", "topicslist__section shadow-sm bg-white rounded");
+
+            var hr = document.createElement("hr");
+
+            var div_container = document.createElement("div");
+            div_container.setAttribute("class", "topicslist__colcontainer");
+
+            var div_header = document.createElement("div");
+            div_header.setAttribute("class", "topicslist__sectionheader");
+
+            var ul = document.createElement("ul");
+            var li = document.createElement("li");
+            li.setAttribute("id", count_navbar);
+            var h4_section = document.createElement("h4");
+            h4_section.innerHTML = uniqueChars[0].charAt(9);
+
+            // appendChild
+            section.appendChild(div_container);
+            // section.appendChild(hr);
+            div_container.appendChild(div_header);
+            div_header.appendChild(ul);
+            ul.appendChild(li);
+            li.appendChild(h4_section);
+
+            var div_column = document.createElement("div");
+            div_column.setAttribute("class", "topicslist__topiccolumncont");
+            var ul1 = document.createElement("ul");
+
+            // appendChild
+
+            div_container.appendChild(div_column);
+            div_column.appendChild(ul1);
+
+            // loop every topics in array ก
+            for (let y = 0; y < uniqueChars.length; y++) {
+                var li2 = document.createElement("li");
+                var a2 = document.createElement("a");
+                a2.href = "#" + uniqueChars[y].replace(/\s+/g, '');
+                a2.innerHTML = uniqueChars[y];
+                a2.setAttribute("class", "topics");
+
+                ul1.appendChild(li2);
+                li2.appendChild(a2);
+            }
+
+            var parent_main = document.getElementById("main");
+            parent_main.appendChild(section);
+        }
+
+        function loop_navbar_topics_eng(uniqueChars) {
+            // show navbar ก in display
+            var nav_li = document.createElement("li");
+            var a_li = document.createElement("a");
+            a_li.href = "#" + count_navbar;
+            a_li.setAttribute("class", "topics");
+            var h4_li = document.createElement("h4");
+            h4_li.innerHTML = uniqueChars[0].charAt(0);
+
+            a_li.appendChild(h4_li);
+            nav_li.appendChild(a_li);
+            var parent_topics = document.getElementById("nav-ul_eng");
+            parent_topics.appendChild(nav_li);
+
+            // show all toppic ก
+
+            var section = document.createElement("section");
+            section.setAttribute("class", "topicslist__section shadow-sm bg-white rounded");
+
+            var hr = document.createElement("hr");
+
+            var div_container = document.createElement("div");
+            div_container.setAttribute("class", "topicslist__colcontainer");
+
+            var div_header = document.createElement("div");
+            div_header.setAttribute("class", "topicslist__sectionheader");
+
+            var ul = document.createElement("ul");
+            var li = document.createElement("li");
+            li.setAttribute("id", count_navbar);
+            var h4_section = document.createElement("h4");
+            h4_section.innerHTML = uniqueChars[0].charAt(0);
+            
+
+            // appendChild
+            section.appendChild(div_container);
+            // section.appendChild(hr);
+            div_container.appendChild(div_header);
+            div_header.appendChild(ul);
+            ul.appendChild(li);
+            li.appendChild(h4_section);
+
+            var div_column = document.createElement("div");
+            div_column.setAttribute("class", "topicslist__topiccolumncont");
+            var ul1 = document.createElement("ul");
+
+            // appendChild
+
+            div_container.appendChild(div_column);
+            div_column.appendChild(ul1);
+
+            // loop every topics in array ก
+            for (let y = 0; y < uniqueChars.length; y++) {
+                var li2 = document.createElement("li");
+                var a2 = document.createElement("a");
+                a2.href = "#" + uniqueChars[y].replace(/\s+/g, '');
+                a2.innerHTML = uniqueChars[y];
+                a2.setAttribute("class", "topics");
+
+                ul1.appendChild(li2);
+                li2.appendChild(a2);
+            }
+
+            var parent_main = document.getElementById("main");
+            parent_main.appendChild(section);
+        }
+
+
 
 
         // fetch data
         function dataReportStatus(data) {
+            let arr_topic = [];
+
+            // push all ก in array
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(10) == "ก" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of ก
+            let uniqueChars = [...new Set(arr_topic)];
+            // cheak array ก isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                // show navbar ก in display
+                var nav_li = document.createElement("li");
+                var a_li = document.createElement("a");
+                a_li.href = "#" + count_navbar;
+                a_li.setAttribute("class", "topics");
+                var h4_li = document.createElement("h4");
+                h4_li.innerHTML = uniqueChars[0].charAt(10);
+
+                a_li.appendChild(h4_li);
+                nav_li.appendChild(a_li);
+                var parent_topics = document.getElementById("nav-ul");
+                parent_topics.appendChild(nav_li);
+
+                // show all toppic ก
+
+                var section = document.createElement("section");
+                section.setAttribute("class", "topicslist__section shadow-sm bg-white rounded");
+
+                var hr = document.createElement("hr");
+
+                var div_container = document.createElement("div");
+                div_container.setAttribute("class", "topicslist__colcontainer");
+
+                var div_header = document.createElement("div");
+                div_header.setAttribute("class", "topicslist__sectionheader");
+
+                var ul = document.createElement("ul");
+                var li = document.createElement("li");
+                li.setAttribute("id", count_navbar);
+                var h4_section = document.createElement("h4");
+                h4_section.innerHTML = uniqueChars[0].charAt(10);
+
+                // appendChild
+                section.appendChild(div_container);
+                // section.appendChild(hr);
+                div_container.appendChild(div_header);
+                div_header.appendChild(ul);
+                ul.appendChild(li);
+                li.appendChild(h4_section);
+
+                var div_column = document.createElement("div");
+                div_column.setAttribute("class", "topicslist__topiccolumncont");
+                var ul1 = document.createElement("ul");
+
+                // appendChild
+
+                div_container.appendChild(div_column);
+                div_column.appendChild(ul1);
+
+                // loop every topics in array ก
+                for (let y = 0; y < uniqueChars.length; y++) {
+                    var li2 = document.createElement("li");
+                    var a2 = document.createElement("a");
+                    a2.href = "#" + uniqueChars[y].replace(/\s+/g, '');
+                    a2.innerHTML = uniqueChars[y];
+                    a2.setAttribute("class", "topics");
+
+                    ul1.appendChild(li2);
+                    li2.appendChild(a2);
+                }
+
+                var parent_main = document.getElementById("main");
+                parent_main.appendChild(section);
+            }
+
+
+            // push all จ in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if ((x.charAt(0) == "โ" && (x.charAt(9) == "จ"  || x.charAt(0) == "จ")) && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of จ
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array จ isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics(uniqueChars);
+            }
+
+
+            // push all น in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if ((x.charAt(0) == "โ" && (x.charAt(9) == "น" || x.charAt(0) == "น"))  && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of น
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array น isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics(uniqueChars);
+            }
+
+            // push all บ in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if ((x.charAt(0) == "โ" && (x.charAt(9) == "บ"  || x.charAt(0) == "บ")) && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of บ
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array บ isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics(uniqueChars);
+            }
+
+            // push all ป in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if ((x.charAt(0) == "โ" && (x.charAt(9) == "ป" || x.charAt(10) == "ป"))  || x.charAt(0) == "ป"  && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of ป
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array ป isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics(uniqueChars);
+            }
+
+            // push all พ in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if ((x.charAt(0) == "โ" && (x.charAt(9) == "พ"  || x.charAt(0) == "พ")) && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of พ
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array พ isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics(uniqueChars);
+            }
+
+            // push all ส in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if ((x.charAt(0) == "โ" && (x.charAt(9) == "ส" || x.charAt(0) == "ส")) && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of ส
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array ส isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics(uniqueChars);
+            }
+
+            // push all A in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "A" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of A
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array A isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+            
+            // push all B in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "B" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of B
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array B isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+
+            // push all C in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "C" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of C
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array C isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+
+            // push all D in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "D" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of D
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array D isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+
+            // push all E in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "E" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of E
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array E isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+
+            // push all G in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "G" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of G
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array G isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+
+            // push all H in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "H" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of H
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array H isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+
+            // push all M in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "M" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of M
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array M isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+
+            // push all N in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "N" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of N
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array N isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+
+             // push all P in array
+             arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if ((x.charAt(0) == "P" || x.charAt(2) == "P") && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of P
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array P isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                // show navbar ก in display
+            var nav_li = document.createElement("li");
+            var a_li = document.createElement("a");
+            a_li.href = "#" + count_navbar;
+            a_li.setAttribute("class", "topics");
+            var h4_li = document.createElement("h4");
+            h4_li.innerHTML = "P";
+
+            a_li.appendChild(h4_li);
+            nav_li.appendChild(a_li);
+            var parent_topics = document.getElementById("nav-ul_eng");
+            parent_topics.appendChild(nav_li);
+
+            // show all toppic ก
+
+            var section = document.createElement("section");
+            section.setAttribute("class", "topicslist__section shadow-sm bg-white rounded");
+
+            var hr = document.createElement("hr");
+
+            var div_container = document.createElement("div");
+            div_container.setAttribute("class", "topicslist__colcontainer");
+
+            var div_header = document.createElement("div");
+            div_header.setAttribute("class", "topicslist__sectionheader");
+
+            var ul = document.createElement("ul");
+            var li = document.createElement("li");
+            li.setAttribute("id", count_navbar);
+            var h4_section = document.createElement("h4");
+            h4_section.innerHTML = "P";
+            
+
+            // appendChild
+            section.appendChild(div_container);
+            // section.appendChild(hr);
+            div_container.appendChild(div_header);
+            div_header.appendChild(ul);
+            ul.appendChild(li);
+            li.appendChild(h4_section);
+
+            var div_column = document.createElement("div");
+            div_column.setAttribute("class", "topicslist__topiccolumncont");
+            var ul1 = document.createElement("ul");
+
+            // appendChild
+
+            div_container.appendChild(div_column);
+            div_column.appendChild(ul1);
+
+            // loop every topics in array ก
+            for (let y = 0; y < uniqueChars.length; y++) {
+                var li2 = document.createElement("li");
+                var a2 = document.createElement("a");
+                a2.href = "#" + uniqueChars[y].replace(/\s+/g, '');
+                a2.innerHTML = uniqueChars[y];
+                a2.setAttribute("class", "topics");
+
+                ul1.appendChild(li2);
+                li2.appendChild(a2);
+            }
+
+            var parent_main = document.getElementById("main");
+            parent_main.appendChild(section);
+            }
+
+            // push all R in array
+            arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "R" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of R
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array R isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+
+             // push all T in array
+             arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "T" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of T
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array T isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
+
+             // push all Y in array
+             arr_topic = [];
+            count_navbar += 1;
+            for (let i = 0; i < data.length; i++) {
+                let x = data[i].Detail;
+                if (x.charAt(0) == "Y" && data[i].cat_lv1 == "Health") {
+                    arr_topic.push(x);
+                }
+            }
+            // remove repeat word of Y
+            uniqueChars = [...new Set(arr_topic)];
+            // cheak array Y isnt null
+            if (arr_topic.length != 0) {
+                // create nav and topics
+                loop_navbar_topics_eng(uniqueChars);
+            }
 
 
             for (let i = 0; i < data.length; i++) {
@@ -474,6 +1142,7 @@
                     var a_cover = document.createElement("a");
                     a_cover.href = data[i].Review_URL;
                     a_cover.setAttribute("style", "text-decoration: none; color:black;");
+                    a_cover.setAttribute("id", `${data[i].Detail.replace(/\s+/g, '')}`);
 
                     //div cover
                     var div_card = document.createElement("div");
@@ -518,7 +1187,7 @@
                     var h3_tag = document.createElement("h4");
                     h3_tag.setAttribute("class", "card-title name");
                     h3_tag.innerHTML = `${data[i].Detail}`;
-                    console.log("yaye!!");
+
 
                     // add name in card text
                     div_text.appendChild(h3_tag);
